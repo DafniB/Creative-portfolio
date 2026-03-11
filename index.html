@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Montserrat;
+background:linear-gradient(120deg,#f8fafc,#e2e8f0);
+color:#1e293b;
+}
+
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+position:sticky;
+top:0;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #e2e8f0;
+z-index:1000;
+}
+
+.logo{
+font-family:'Space Grotesk';
+font-size:22px;
+font-weight:600;
+letter-spacing:2px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:#1e293b;
+font-weight:500;
+}
+
+nav a:hover{
+color:#6366f1;
+}
+
+/* HERO */
+.hero{
+min-height:95vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+}
+
+.hero-content{
+max-width:800px;
+}
+
+.hero h1{
+font-size:64px;
+font-family:'Space Grotesk';
+margin-bottom:15px;
+}
+
+.hero span{
+color:#6366f1;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.7;
+color:#475569;
+margin-bottom:30px;
+}
+
+.hero button{
+padding:14px 32px;
+border:none;
+border-radius:30px;
+background:#6366f1;
+color:white;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(99,102,241,0.3);
+}
+
+.hero button:hover{
+transform:translateY(-3px);
+}
+
+/* SECTIONS */
+.section{
+padding:80px 10%;
+}
+
+.section-title{
+font-size:36px;
+text-align:center;
+margin-bottom:50px;
+font-family:'Space Grotesk';
+}
+
+/* ABOUT */
+.about{
+max-width:900px;
+margin:auto;
+text-align:center;
+font-size:18px;
+line-height:1.8;
+color:#475569;
+}
+
+/* SKILLS */
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.skill-card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+text-align:center;
+transition:.3s;
+}
+
+.skill-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.skill-card h3{
+margin-bottom:10px;
+}
+
+/* PROJECTS */
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.project-card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+transition:.3s;
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 40px rgba(0,0,0,0.12);
+}
+
+.project-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.project-info{
+padding:20px;
+}
+
+.project-info h3{
+margin-bottom:10px;
+}
+
+.project-info p{
+font-size:14px;
+color:#475569;
+}
+
+/* EXPERIENCE */
+.timeline{
+max-width:800px;
+margin:auto;
+}
+
+.timeline-item{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.timeline-item h4{
+margin-bottom:5px;
+}
+
+.timeline-item span{
+font-size:13px;
+color:#64748b;
+}
+
+/* CONTACT */
+.contact-box{
+max-width:600px;
+margin:auto;
+}
+
+.contact-box input,
+.contact-box textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #e2e8f0;
+}
+
+.contact-box button{
+margin-top:10px;
+padding:12px 30px;
+border:none;
+border-radius:25px;
+background:#6366f1;
+color:white;
+font-weight:600;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+margin-top:50px;
+color:#64748b;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+.hero h1{font-size:40px}
+nav ul{display:none}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">PORTFOLIO</div>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Hello, I'm a <span>Creative Developer</span></h1>
+<p>I design and build beautiful digital experiences, interactive applications, and modern web solutions that solve real-world problems.</p>
+<button onclick="scrollProjects()">Explore Work</button>
+</div>
+</section>
+
+<section class="section" id="about">
+<h2 class="section-title">About Me</h2>
+<p class="about">Passionate developer focused on building scalable applications, intuitive user interfaces, and powerful digital solutions. Experienced in modern web technologies, creative design systems, and performance-focused development.</p>
+</section>
+
+<section class="section" id="skills">
+<h2 class="section-title">Skills</h2>
+<div class="skills">
+<div class="skill-card"><h3>Frontend Development</h3><p>Modern responsive UI using HTML, CSS, JavaScript and frameworks.</p></div>
+<div class="skill-card"><h3>Backend Development</h3><p>Building scalable APIs and server side systems.</p></div>
+<div class="skill-card"><h3>UI / UX Design</h3><p>Designing clean user experiences and product interfaces.</p></div>
+<div class="skill-card"><h3>Problem Solving</h3><p>Creating efficient solutions to complex technical challenges.</p></div>
+</div>
+</section>
+
+<section class="section" id="projects">
+<h2 class="section-title">Projects</h2>
+<div class="projects">
+
+<div class="project-card">
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1974">
+<div class="project-info">
+<h3>Productivity Web App</h3>
+<p>A powerful productivity platform for managing tasks, notes and projects.</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1974">
+<div class="project-info">
+<h3>AI Powered Dashboard</h3>
+<p>Interactive dashboard with analytics and intelligent insights.</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1974">
+<div class="project-info">
+<h3>Secure Web Platform</h3>
+<p>Security focused platform designed with modern architecture.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="experience">
+<h2 class="section-title">Experience</h2>
+<div class="timeline">
+<div class="timeline-item">
+<h4>Software Developer</h4>
+<span>2024 – Present</span>
+<p>Building scalable applications and interactive web systems.</p>
+</div>
+
+<div class="timeline-item">
+<h4>Freelance Developer</h4>
+<span>2022 – 2024</span>
+<p>Developed websites and digital platforms for various clients.</p>
+</div>
+
+<div class="timeline-item">
+<h4>Tech Enthusiast</h4>
+<span>Ongoing</span>
+<p>Exploring emerging technologies, creative development, and product design.</p>
+</div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<h2 class="section-title">Contact</h2>
+<div class="contact-box">
+<input placeholder="Your Name">
+<input placeholder="Email">
+<textarea rows="5" placeholder="Message"></textarea>
+<button>Send Message</button>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Creative Portfolio</p>
+</footer>
+
+<script>
+function scrollProjects(){
+document.getElementById("projects").scrollIntoView({behavior:"smooth"})
+}
+</script>
+
+</body>
+</html>
